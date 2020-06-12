@@ -36,6 +36,7 @@ public class DemoApplication {
                         .path("/test/redisSet")
                         //.filters(f -> f.addRequestHeader("Router","Gateway"))
                         .uri( httpUri +"/test/redisSet"))
+                // TODO: WebSocket need to be done!
                 .route("websocket_route", r -> r.path("/webSocket")
                         .uri("ws://127.0.0.1:6605"))
                 .build();
