@@ -33,13 +33,13 @@ public class DemoApplication {
                         .uri( httpUri +"/getAllProducts"))
                 .route(p -> p
                         .path("/createOrder")
-                        .uri( fudeUserServer + "/createOrder"))
+                        .uri( httpUri + "/createOrder"))
                 .route(p -> p
                         .path("/traderOrderHistory")
-                        .uri( fudeUserServer + "/traderOrderHistory"))
+                        .uri( httpUri + "/traderOrderHistory"))
                 .route(p -> p
                         .path("/brokerOrderHistory")
-                        .uri( fudeUserServer + "/brokerOrderHistory"))
+                        .uri( httpUri + "/brokerOrderHistory"))
                 .route(p -> p
                         .path("/test/redisGet")
                         //.filters(f -> f.addRequestHeader("Router","Gateway"))
