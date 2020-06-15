@@ -32,6 +32,15 @@ public class DemoApplication {
                         //.filters(f -> f.addRequestHeader("Router","Gateway"))
                         .uri( httpUri +"/getAllProducts"))
                 .route(p -> p
+                        .path("/createOrder")
+                        .uri( fudeUserServer + "/createOrder"))
+                .route(p -> p
+                        .path("/traderOrderHistory")
+                        .uri( fudeUserServer + "/traderOrderHistory"))
+                .route(p -> p
+                        .path("/brokerOrderHistory")
+                        .uri( fudeUserServer + "/brokerOrderHistory"))
+                .route(p -> p
                         .path("/test/redisGet")
                         //.filters(f -> f.addRequestHeader("Router","Gateway"))
                         .uri( httpUri +"/test/redisGet"))
@@ -57,7 +66,7 @@ public class DemoApplication {
 class UriConfiguration {
 
     // TODO: 后端地址有变的时候更改这里就可以
-    private String httpbin = "http://192.168.254.148:8089";
+    private String httpbin = "http://localhost:8089";
 
     @Value("${fudeUserServer}")
     private String fudeUserServer;
